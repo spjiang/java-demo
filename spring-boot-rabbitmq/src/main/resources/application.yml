@@ -1,0 +1,17 @@
+server:
+  port: 8888
+spring:
+  rabbitmq:
+    host: 127.0.0.1
+    username: admin
+    password: Oqro55Mz
+    port: 5672
+    virtual-host: user-center
+user:
+  rabbitmq:
+    build:
+      email:
+        exchange: user
+        queue: user.build.email
+        route-key: user.build.email
+
