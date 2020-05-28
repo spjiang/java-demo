@@ -7,14 +7,18 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="spring-boot-rabbitmq" />
+        <module name="spring-01" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="spring-01" target="1.5" />
+      <module name="spring-02" target="1.5" />
       <module name="spring-boot-rabbitmq" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="spring-01" options="" />
       <module name="spring-boot-rabbitmq" options="-parameters" />
     </option>
   </component>
