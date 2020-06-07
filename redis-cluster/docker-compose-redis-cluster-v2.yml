@@ -1,0 +1,121 @@
+version: "3.4"
+
+x-image:
+  &default-image
+    redis:5.0.3
+x-restart:
+  &default-restart
+    always
+x-command:
+  &default-command
+    redis-server /etc/redis/redis.conf
+x-netmode:
+  &default-netmode
+    hosts
+
+services:
+  redis1:
+    image: *default-image
+    restart: *default-restart
+    container_name: redis5-m1
+    ports:
+    - 6368:6368
+    - 16368:16368
+    command: *default-command
+    volumes:
+      - ./6368/data:/data
+      - ./6368/conf/redis.conf:/etc/redis/redis.conf:ro
+    #network_mode: *default-netmode
+    networks: # docker 网络设置
+      redis-master:
+        ipv4_address: 172.50.0.2
+  redis2:
+    image: *default-image
+    restart: *default-restart
+    container_name: redis5-m2
+    command: *default-command
+    ports:
+    - 6378:6378
+    - 16378:16378
+    volumes:
+      - ./6378/data:/data
+      - ./6378/conf/redis.conf:/etc/redis/redis.conf:ro
+    #network_mode: *default-netmode
+    networks: # docker 网络设置
+      redis-master:
+        ipv4_address: 172.50.0.3
+  redis3:
+    image: *default-image
+    restart: *default-restart
+    container_name: redis5-m3
+    command: *default-command
+    ports:
+    - 6388:6388
+    - 16388:16388
+    volumes:
+      - ./6388/data:/data
+      - ./6388/conf/redis.conf:/etc/redis/redis.conf:ro
+    #network_mode: *default-netmode
+    networks: # docker 网络设置
+      redis-master:
+        ipv4_address: 172.50.0.4
+  redis4:
+    image: *default-image
+    restart: *default-restart
+    container_name: redis5-s1
+    command: *default-command
+    ports:
+    - 6369:6369
+    - 16369:16369
+    volumes:
+      - ./6369/data:/data
+      - ./6369/conf/redis.conf:/etc/redis/redis.conf:ro
+    #network_mode: *default-netmode
+    networks: # docker 网络设置
+      redis-slave:
+        ipv4_address: 172.30.0.2
+  redis5:
+    image: *default-image
+    restart: *default-restart
+    container_name: redis5-s2
+    command: *default-command
+    ports:
+    - 6379:6379
+    - 16379:16379
+    volumes:
+      - ./6379/data:/data
+      - ./6379/conf/redis.conf:/etc/redis/redis.conf:ro
+    #network_mode: *default-netmode
+    networks: # docker 网络设置
+      redis-slave:
+        ipv4_address: 172.30.0.3
+  redis6:
+    image: *default-image
+    restart: *default-restart
+    container_name: redis5-s3
+    command: *default-command
+    ports:
+    - 6389:6389
+    - 16389:16389
+    volumes:
+      - ./6389/data:/data
+      - ./6389/conf/redis.conf:/etc/redis/redis.conf:ro
+    #snetwork_mode: *default-netmode
+    networks: # docker 网络设置
+      redis-slave:
+        ipv4_address: 172.30.0.4
+networks:
+  redis-master:
+    driver: bridge # 创建一个docker 的桥接网络
+    ipam:
+      driver: default
+      config:
+        -
+          subnet: 172.50.0.0/16
+  redis-slave:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        -
+          subnet: 172.30.0.0/16

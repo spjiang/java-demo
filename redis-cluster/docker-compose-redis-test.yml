@@ -1,0 +1,12 @@
+version: "3.4"
+services:
+  redis1:
+    image: redis:5.0.3
+    restart: always
+    container_name: redis5-m1
+    command: redis-server /etc/redis/redis.conf
+    ports:
+    - "6368:6368"
+    volumes:
+      - ./6368/data:/data
+      - ./6368/conf/redis.conf:/etc/redis/redis.conf

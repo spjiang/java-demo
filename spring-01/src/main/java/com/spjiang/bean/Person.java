@@ -1,5 +1,7 @@
 package com.spjiang.bean;
 
+import com.spjiang.annotation.Test03;
+
 /**
  * Package: com.spjiang.bean
  *
@@ -28,6 +30,7 @@ public class Person {
     }
 
     @Override
+    @Test03(name = "test")
     public String toString() {
         return "Person{" +
                 "id=" + id +

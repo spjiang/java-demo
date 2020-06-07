@@ -5,6 +5,9 @@
       <list>
         <option value="$PROJECT_DIR$/spring-boot-rabbitmq/pom.xml" />
         <option value="$PROJECT_DIR$/spring-01/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-boot-01/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-boot-druid/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-boot-redis-cluster-test/pom.xml" />
       </list>
     </option>
   </component>

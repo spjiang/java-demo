@@ -2,11 +2,12 @@ server:
   port: 8888
 spring:
   rabbitmq:
-    host: 127.0.0.1
-    username: admin
-    password: Oqro55Mz
-    port: 5672
-    virtual-host: user-center
+    host: 172.16.79.10
+    #username: admin
+    #password: Oqro55Mz
+    username: guest
+    password: guest
+    port: 5673
 user:
   rabbitmq:
     build:
