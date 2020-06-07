@@ -5,8 +5,7 @@ import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.cache.interceptor.KeyGenerator;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisClusterConfiguration;
@@ -14,21 +13,15 @@ import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.connection.jedis.JedisClientConfiguration;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
-import org.springframework.util.Assert;
-import org.springframework.util.StringUtils;
-import redis.clients.jedis.HostAndPort;
 import redis.clients.jedis.JedisCluster;
 import redis.clients.jedis.JedisPoolConfig;
 
-import javax.annotation.Resource;
-import java.net.UnknownHostException;
+import java.lang.reflect.Field;
 import java.time.Duration;
-import java.util.Arrays;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Package: com.spjiang.springboot.config
@@ -57,6 +50,53 @@ public class RedisClusterConfig {
     @Value("${spring.redis.password}")
     private String password;
 
+    @Bean
+    public KeyGenerator keyGenerator() {
+        return (target, method, params) -> {
+            StringBuilder sb = new StringBuilder();
+            sb.append(target.getClass().getName());
+            sb.append(method.getName());
+            for (Object obj : params) {
+                sb.append(obj.toString());
+            }
+            return sb.toString();
+        };
+    }
+
+    /**
+     * 通过反射获取JedisCluster
+     *
+     * @param factory
+     * @return
+     */
+    @Bean
+    public JedisCluster redisCluster(RedisConnectionFactory factory) {
+        Object object = null;
+        try {
+            object = getFieldValueByObject(factory, "cluster");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return (JedisCluster) object;
+
+    }
+
+    public Object getFieldValueByObject(Object object, String targetFieldName) throws Exception {
+        // 获取该对象的Class
+        Class objClass = object.getClass();
+        // 获取所有的属性数组
+        Field[] fields = objClass.getDeclaredFields();
+        for (Field field : fields) {
+            // 属性名称
+            field.setAccessible(true);
+            String currentFieldName = field.getName();
+            if (currentFieldName.equals(targetFieldName)) {
+                // 通过反射拿到该属性在此对象中的值(也可能是个对象)
+                return field.get(object);
+            }
+        }
+        return null;
+    }
 
     @Bean
     public RedisConnectionFactory redisConnectionFactory() {
@@ -99,6 +139,5 @@ public class RedisClusterConfig {
         template.setHashValueSerializer(jackson2JsonRedisSerializer);
         return template;
     }
-
 
 }
