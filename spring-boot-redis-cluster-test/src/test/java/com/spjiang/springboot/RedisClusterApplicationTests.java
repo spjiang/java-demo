@@ -1,18 +1,11 @@
 package com.spjiang.springboot;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.TypeReference;
-import com.spjiang.springboot.bean.Student;
-import org.junit.Assert;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.test.context.junit4.SpringRunner;
-import redis.clients.jedis.JedisCluster;
 
-import java.util.*;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -30,7 +23,7 @@ public class RedisClusterApplicationTests {
 
     @Test
     public void test001() {
-        while (true) {
+        for (int i = 0; i < 10; i++) {
             try {
                 String key = "test:" + new Date().getTime();
                 redisTemplate.opsForValue().set(key, new Date().getTime());

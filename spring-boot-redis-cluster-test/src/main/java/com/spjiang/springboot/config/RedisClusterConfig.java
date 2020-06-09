@@ -10,10 +10,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisClusterConfiguration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
+import org.springframework.data.redis.connection.RedisPassword;
 import org.springframework.data.redis.connection.jedis.JedisClientConfiguration;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 import redis.clients.jedis.JedisCluster;
@@ -78,7 +78,6 @@ public class RedisClusterConfig {
             e.printStackTrace();
         }
         return (JedisCluster) object;
-
     }
 
     public Object getFieldValueByObject(Object object, String targetFieldName) throws Exception {
@@ -110,7 +109,7 @@ public class RedisClusterConfig {
 
         // cluster模式
         RedisClusterConfiguration redisConfig = new RedisClusterConfiguration();
-        redisConfig.setPassword(password);
+        redisConfig.setPassword(RedisPassword.of(password));
         redisConfig.setMaxRedirects(clusterMaxRedirects);
         for (String ipPort : clusterNodes) {
             String[] ipPortArr = ipPort.split(":");
