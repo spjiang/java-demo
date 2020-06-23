@@ -7,16 +7,19 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="spring-boot-rabbitmq" />
-        <module name="spring-01" />
-        <module name="spring-boot-redis-cluster-test" />
         <module name="spring-boot-druid" />
+        <module name="spring-boot-redis-cluster-test" />
+        <module name="spring-boot-interceptor" />
+        <module name="spring-02" />
+        <module name="spring-01" />
+        <module name="spring-boot-rabbitmq" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="spring-01" target="1.5" />
       <module name="spring-02" target="1.5" />
       <module name="spring-boot-druid" target="1.8" />
+      <module name="spring-boot-interceptor" target="1.8" />
       <module name="spring-boot-rabbitmq" target="1.8" />
       <module name="spring-boot-redis-cluster-test" target="1.8" />
     </bytecodeTargetLevel>
@@ -25,6 +28,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="spring-01" options="" />
       <module name="spring-boot-druid" options="-parameters" />
+      <module name="spring-boot-interceptor" options="-parameters" />
       <module name="spring-boot-rabbitmq" options="-parameters" />
       <module name="spring-boot-redis-cluster-test" options="-parameters" />
     </option>

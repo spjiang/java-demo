@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/aliuyn-iot/aliuyn-iot.iml" filepath="$PROJECT_DIR$/aliuyn-iot/aliuyn-iot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/iot_01/iot_01.iml" filepath="$PROJECT_DIR$/iot_01/iot_01.iml" />
       <module fileurl="file://$PROJECT_DIR$/java-demo.iml" filepath="$PROJECT_DIR$/java-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-01/spring-01.iml" filepath="$PROJECT_DIR$/spring-01/spring-01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-02/spring-02.iml" filepath="$PROJECT_DIR$/spring-02/spring-02.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-boot-druid/spring-boot-druid.iml" filepath="$PROJECT_DIR$/spring-boot-druid/spring-boot-druid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-boot-interceptor/spring-boot-interceptor.iml" filepath="$PROJECT_DIR$/spring-boot-interceptor/spring-boot-interceptor.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-boot-rabbitmq/spring-boot-rabbitmq.iml" filepath="$PROJECT_DIR$/spring-boot-rabbitmq/spring-boot-rabbitmq.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-boot-redis-cluster-test/spring-boot-redis-cluster-test.iml" filepath="$PROJECT_DIR$/spring-boot-redis-cluster-test/spring-boot-redis-cluster-test.iml" />
     </modules>
