@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="spring-boot-druid" />
         <module name="spring-boot-redis-cluster-test" />
+        <module name="spring-boot-io" />
         <module name="spring-boot-interceptor" />
         <module name="spring-02" />
         <module name="spring-01" />
@@ -20,6 +21,7 @@
       <module name="spring-02" target="1.5" />
       <module name="spring-boot-druid" target="1.8" />
       <module name="spring-boot-interceptor" target="1.8" />
+      <module name="spring-boot-io" target="7" />
       <module name="spring-boot-rabbitmq" target="1.8" />
       <module name="spring-boot-redis-cluster-test" target="1.8" />
     </bytecodeTargetLevel>

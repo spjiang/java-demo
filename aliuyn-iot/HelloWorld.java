@@ -1,11 +1,9 @@
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
-import com.aliyun.alink.dm.model.RequestModel;
-import com.common.tools.log.ALog;
-import com.google.gson.Gson;
 import com.aliyun.alink.dm.api.DeviceInfo;
 import com.aliyun.alink.dm.api.InitResult;
 import com.aliyun.alink.dm.api.IoTApiClientConfig;
+import com.aliyun.alink.dm.model.RequestModel;
 import com.aliyun.alink.linkkit.api.ILinkKitConnectListener;
 import com.aliyun.alink.linkkit.api.IoTMqttClientConfig;
 import com.aliyun.alink.linkkit.api.LinkKit;
@@ -18,13 +16,13 @@ import com.aliyun.alink.linksdk.channel.core.persistent.IOnRrpcResponseHandle;
 import com.aliyun.alink.linksdk.channel.core.persistent.IOnSubscribeRrpcListener;
 import com.aliyun.alink.linksdk.channel.core.persistent.PersistentRequest;
 import com.aliyun.alink.linksdk.channel.core.persistent.mqtt.request.MqttPublishRequest;
+import com.common.tools.log.ALog;
 import com.common.tools.thread.ThreadPool;
+import com.google.gson.Gson;
 import com.http.utils.LogUtils;
 
-import java.util.concurrent.TimeUnit;
-
-import java.io.*;
 import java.util.Arrays;
+import java.util.concurrent.TimeUnit;
 
 public class HelloWorld {
     private static final String TAG = "HelloWorld";
