@@ -13,10 +13,12 @@
         <module name="spring-boot-interceptor" />
         <module name="spring-02" />
         <module name="spring-01" />
+        <module name="java-test" />
         <module name="spring-boot-rabbitmq" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="java-test" target="1.5" />
       <module name="spring-01" target="1.5" />
       <module name="spring-02" target="1.5" />
       <module name="spring-boot-druid" target="1.8" />
