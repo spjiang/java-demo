@@ -1,0 +1,47 @@
+spring:
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: admins
+    password: Oqro55Mz
+    # 发送确认
+    #publisher-confirms: true
+    # 路由失败回调
+    publisher-returns: true
+    template:
+      # 必须设置成true 消息路由失败通知监听者，false 将消息丢弃
+      mandatory: true
+    listener:
+      simple:
+        # 每次从RabbitMQ获取的消息数量
+        prefetch: 1
+        default-requeue-rejected: false
+        # 每个队列启动的消费者数量
+        concurrency: 1
+        # 每个队列最大的消费者数量
+        max-concurrency: 1
+        # 签收模式为手动签收-那么需要在代码中手动ACK
+        acknowledge-mode: manual
+    # NONE值是禁用发布确认模式，是默认值,
+    # CORRELATED值是发布消息成功到交换器后会触发回调方法，如1示例
+    # SIMPLE值经测试有两种效果，其一效果和CORRELATED值一样会触发回调方法，
+    # 其二在发布消息成功后使用rabbitTemplate调用waitForConfirms或waitForConfirmsOrDie方法
+    # 等待broker节点返回发送结果，根据返回结果来判定下一步的逻辑，要注意的点是waitForConfirmsOrDie方法如果返回false则会关闭channel，
+    # 则接下来无法发送消息到broker;
+    publisher-confirm-type: NONE
+#邮件队列
+email:
+  queue:
+    name: demo.email
+
+#邮件交换器名称
+exchange:
+  name: demoTopicExchange
+
+#死信队列
+dead:
+  letter:
+    queue:
+      name: demo.dead.letter
+    exchange:
+      name: demoDeadLetterTopicExchange

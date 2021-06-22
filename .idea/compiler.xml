@@ -10,17 +10,24 @@
         <module name="spring-boot-druid" />
         <module name="spring-boot-redis-cluster-test" />
         <module name="spring-boot-io" />
+        <module name="ms" />
         <module name="spring-boot-interceptor" />
         <module name="spring-02" />
         <module name="spring-01" />
-        <module name="java-test" />
+        <module name="spring-boot-die-rabbitmq" />
+        <module name="rabbitmq" />
+        <module name="design-model" />
         <module name="spring-boot-rabbitmq" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="design-model" target="1.5" />
       <module name="java-test" target="1.5" />
+      <module name="ms" target="1.5" />
+      <module name="rabbitmq" target="1.8" />
       <module name="spring-01" target="1.5" />
       <module name="spring-02" target="1.5" />
+      <module name="spring-boot-die-rabbitmq" target="1.5" />
       <module name="spring-boot-druid" target="1.8" />
       <module name="spring-boot-interceptor" target="1.8" />
       <module name="spring-boot-io" target="7" />
@@ -30,6 +37,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="rabbitmq" options="-parameters" />
       <module name="spring-01" options="" />
       <module name="spring-boot-druid" options="-parameters" />
       <module name="spring-boot-interceptor" options="-parameters" />
