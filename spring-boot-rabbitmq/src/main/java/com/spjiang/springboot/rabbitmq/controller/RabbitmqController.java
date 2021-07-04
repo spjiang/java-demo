@@ -36,5 +36,4 @@ public class RabbitmqController {
         delaySender.sendDelay(order);
         return "ok";
     }
-
 }
