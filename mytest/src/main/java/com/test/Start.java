@@ -9,8 +9,11 @@ package com.test;
  */
 public class Start {
     public static void main(String[] args) {
-        int test = 1;
+/*        int test = 1;
         System.getProperty("line.separator", "\n");
-        System.out.println("ccc");
+        System.out.println("ccc");*/
+        int i = Runtime.getRuntime().availableProcessors();
+        System.out.println(i);
+
     }
 }
