@@ -18,6 +18,4 @@ public class Test {
         person.getName();
         System.out.println(person.getName());
     }
-
-
 }

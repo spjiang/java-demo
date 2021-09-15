@@ -8,6 +8,8 @@
       <module fileurl="file://$PROJECT_DIR$/java-demo.iml" filepath="$PROJECT_DIR$/java-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/mongodb/mongodb.iml" filepath="$PROJECT_DIR$/mongodb/mongodb.iml" />
       <module fileurl="file://$PROJECT_DIR$/ms/ms.iml" filepath="$PROJECT_DIR$/ms/ms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-kafka/my-kafka.iml" filepath="$PROJECT_DIR$/my-kafka/my-kafka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mytest/mytest.iml" filepath="$PROJECT_DIR$/mytest/mytest.iml" />
       <module fileurl="file://$PROJECT_DIR$/rabbitmq/rabbitmq.iml" filepath="$PROJECT_DIR$/rabbitmq/rabbitmq.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-01/spring-01.iml" filepath="$PROJECT_DIR$/spring-01/spring-01.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-02/spring-02.iml" filepath="$PROJECT_DIR$/spring-02/spring-02.iml" />

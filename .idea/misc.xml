@@ -16,6 +16,8 @@
         <option value="$PROJECT_DIR$/design-model/pom.xml" />
         <option value="$PROJECT_DIR$/rabbitmq/pom.xml" />
         <option value="$PROJECT_DIR$/mongodb/pom.xml" />
+        <option value="$PROJECT_DIR$/my-kafka/pom.xml" />
+        <option value="$PROJECT_DIR$/mytest/pom.xml" />
       </list>
     </option>
   </component>
