@@ -26,9 +26,10 @@ public class ProtocolDecoder extends ProtocolDecoderAdapter {
 
     private int maxPackLength = 100;
 
-    public ProtocolDecoder() {
-        this(Charset.defaultCharset());
-    }
+//    public ProtocolDecoder() {
+//        this(Charset.defaultCharset());
+//        System.out.println("ProtocolDecoder.ProtocolDecoder");
+//    }
 
     public ProtocolDecoder(Charset charset) {
         this.charset = charset;
@@ -46,26 +47,47 @@ public class ProtocolDecoder extends ProtocolDecoderAdapter {
 
     @Override
     public void decode(IoSession session, IoBuffer in, ProtocolDecoderOutput out) throws Exception {
+        System.out.println("++++ProtocolDecoder.decode++++");
         final int packHeadLength = 5;
         Context ctx = this.getConText(session);
         ctx.append(in);
         IoBuffer buf = ctx.getBuf();
         buf.flip();
+        System.out.println("++++ProtocolDecoder.decode.while.buf.position.0++++" + buf.position()); // 0
         while (buf.remaining() >= packHeadLength) {
+            System.out.println("++++ProtocolDecoder.decode.while++++");
             buf.mark();
             int length = buf.getInt();
+            System.out.println("++++ProtocolDecoder.decode.while.buf.length.position++++" + buf.position()); // 4,18
+            System.out.println("++++ProtocolDecoder.decode.while.buf.length.limit++++" + buf.limit()); // 42,42
+            System.out.println("++++ProtocolDecoder.decode.while.length++++" + length); // 14,14
             byte flag = buf.get();
+            System.out.println("++++ProtocolDecoder.decode.while.buf.flag.position++++" + buf.position()); // 5,19
+            System.out.println("++++ProtocolDecoder.decode.while.buf.flag.limit++++" + buf.limit()); // 42,42
+            System.out.println("++++ProtocolDecoder.decode.while.flag++++" + flag); // 0,1
+            System.out.println("++++ProtocolDecoder.decode.while.buf.remaining++++" + buf.remaining()); // 37,23(14+5=19)
             if (length < 0 || length > maxPackLength) {
+                System.out.println("++++ProtocolDecoder.decode.while.buf.reset++++");
                 buf.reset();
                 break;
             } else if (length >= packHeadLength && length - packHeadLength <= buf.remaining()) {
+                System.out.println("++++ProtocolDecoder.decode.while.buf.正常++++");
+                System.out.println("++++ProtocolDecoder.decode.while.buf.正常.(length - packHeadLength)++++" + (length - packHeadLength)); // 9,9
+                System.out.println("++++ProtocolDecoder.decode.while.buf.正常.buf.remaining++++" + buf.remaining()); // 37,23
                 int oldLimit = buf.limit();
+                System.out.println("++++ProtocolDecoder.decode.while.buf.正常.oldLimit++++" + oldLimit); // 42,42,
                 buf.limit(buf.position() + length - packHeadLength);
+                System.out.println("++++ProtocolDecoder.decode.while.buf.正常.position++++" + buf.position()); // 5,19
+                System.out.println("++++ProtocolDecoder.decode.while.buf.正常.buf.position() + length - packHeadLength++++" + (buf.position() + (length - packHeadLength))); // 14,28
                 String content = buf.getString(ctx.getDecoder());
+                System.out.println("++++ProtocolDecoder.decode.while.buf.正常.content++++" + content);
                 buf.limit(oldLimit);
-                ProtocolPack packAge = new ProtocolPack(flag, content);
-                out.write(packAge);
+                System.out.println("++++ProtocolDecoder.decode.while.buf.正常.position.oldLimit++++" + oldLimit); // 42,42
+                ProtocolPack pack = new ProtocolPack(flag, content);
+                System.out.println("++++ProtocolDecoder.decode.while.buf.正常.position.2++++" + buf.position()); // 14,28
+                out.write(pack);
             } else {
+                System.out.println("++++ProtocolDecoder.decode.while.buf.半包++++");
                 // 半包
                 buf.clear();
                 break;
