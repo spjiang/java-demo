@@ -17,20 +17,21 @@ import java.nio.charset.Charset;
  */
 public class ProtocolEncoder extends ProtocolEncoderAdapter {
 
-    private final Charset charset;
+    final Charset charset;
     public ProtocolEncoder(Charset charset){
         this.charset = charset;
     }
 
     @Override
     public void encode(IoSession session, Object message, ProtocolEncoderOutput out) throws Exception {
-        ProtocolPack value = (ProtocolPack) message;
-        IoBuffer buf = IoBuffer.allocate(value.getLength());
+        ProtocolPack pack = (ProtocolPack) message;
+        System.out.println("ProtocolEncoder.encode："+pack);
+        IoBuffer buf = IoBuffer.allocate(pack.getLength());
         buf.setAutoExpand(true);
-        buf.putInt(value.getLength());
-        buf.put(value.getFlag());
-        if (value.getContent() != null) {
-            buf.put(value.getContent().getBytes());
+        buf.putInt(pack.getLength());
+        buf.put(pack.getFlag());
+        if (pack.getContent() != null) {
+            buf.put(pack.getContent().getBytes());
         }
         // 就是让我们的limit=position,position=0;为我们读取缓冲区的数据做好准备，因为有时候，limit！=position，一般在发送数据之前调用
         buf.flip();

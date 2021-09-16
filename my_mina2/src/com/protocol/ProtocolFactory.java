@@ -24,11 +24,13 @@ public class ProtocolFactory implements ProtocolCodecFactory {
 
     @Override
     public ProtocolEncoder getEncoder(IoSession session) throws Exception {
+        System.out.println("ProtocolFactory.getEncoder");
         return encoder;
     }
 
     @Override
     public ProtocolDecoder getDecoder(IoSession session) throws Exception {
+        System.out.println("ProtocolFactory.getDecoder");
         return decoder;
     }
 }

@@ -20,11 +20,14 @@ public class MyClientHandle extends IoHandlerAdapter {
 
     @Override
     public void messageReceived(IoSession session, Object message) throws Exception {
-        // super.messageReceived(session, message);
         System.out.println("MyClientHandle.messageReceived");
-        String msg = (String) message;
-        System.out.println(msg);
+//        String msg = (String) message;
+//        System.out.println(msg);
     }
 
-
+    @Override
+    public void messageSent(IoSession session, Object message) throws Exception {
+        ProtocolPack msg = (ProtocolPack) message;
+        System.out.println("MyClientHandle.messageSent:" + msg);
+    }
 }

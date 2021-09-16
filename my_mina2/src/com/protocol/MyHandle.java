@@ -5,22 +5,16 @@ import org.apache.mina.core.session.IdleStatus;
 import org.apache.mina.core.session.IoSession;
 
 /**
- * Package: com.mina
+ * Package: com.protocol
  *
  * @description:
  * @author: jiangshengping <spjiang@aliyun.com>
  * @create: 2021-09-15 23:15
  */
-public class MyHeadle extends IoHandlerAdapter {
-
-    public MyHeadle() {
-        super();
-    }
-
+public class MyHandle extends IoHandlerAdapter {
 
     @Override
     public void sessionIdle(IoSession session, IdleStatus status) throws Exception {
-        // super.sessionIdle(session, status);
         System.out.println("sessionIdle,没有操作空闲状态。。。");
     }
 
@@ -33,7 +27,6 @@ public class MyHeadle extends IoHandlerAdapter {
      */
     @Override
     public void exceptionCaught(IoSession session, Throwable cause) throws Exception {
-        // super.exceptionCaught(session, cause);
         System.out.println("exceptionCaught,连接出现异常");
     }
 

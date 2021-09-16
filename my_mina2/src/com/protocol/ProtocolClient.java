@@ -1,5 +1,6 @@
 package com.protocol;
 
+import lombok.SneakyThrows;
 import org.apache.mina.core.future.ConnectFuture;
 import org.apache.mina.core.future.IoFuture;
 import org.apache.mina.core.future.IoFutureListener;
@@ -25,7 +26,7 @@ public class ProtocolClient {
     static IoConnector connector = null;
     static int port = 8888;
     static String host = "127.0.0.1";
-    static int fil = 100;
+    static int fil = 1;
     static long start = 0;
 
     public static void main(String[] args) throws IOException {
@@ -43,6 +44,7 @@ public class ProtocolClient {
         connector.setHandler(new MyClientHandle());
         ConnectFuture connectFuture = connector.connect(new InetSocketAddress(host, port));
         connectFuture.addListener(new IoFutureListener<IoFuture>() {
+            @SneakyThrows
             @Override
             public void operationComplete(IoFuture ioFuture) {
                 if (ioFuture.isDone()) {
@@ -58,7 +60,7 @@ public class ProtocolClient {
             String content = "spjiang:" + i;
             ProtocolPack pack = new ProtocolPack((byte) i, content);
             session.write(pack);
-            System.out.println("客户端发送数据：" + pack);
+            System.out.println("发送信息："+pack);
         }
     }
 }
