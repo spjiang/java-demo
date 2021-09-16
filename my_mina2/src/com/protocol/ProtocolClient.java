@@ -23,15 +23,13 @@ import java.nio.charset.StandardCharsets;
 public class ProtocolClient {
 
     static IoConnector connector = null;
-    private static int port = 8888;
-    private static String host = "127.0.0.1";
-    static long counter = 0;
-    final static int fil = 100;
+    static int port = 8888;
+    static String host = "127.0.0.1";
+    static int fil = 100;
     static long start = 0;
 
     public static void main(String[] args) throws IOException {
         start = System.currentTimeMillis();
-        IoSession session = null;
 
         connector = new NioSocketConnector();
         connector.setConnectTimeoutMillis(3000);
