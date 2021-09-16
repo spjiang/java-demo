@@ -87,5 +87,6 @@ public class MyHeadle extends IoHandlerAdapter {
     public void messageSent(IoSession session, Object message) throws Exception {
         // super.messageSent(session, message);
         System.out.println("messageSent,发送数据处理过程");
+        System.out.println(message);
     }
 }

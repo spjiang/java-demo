@@ -1,0 +1,125 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Java template
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+### Eclipse template
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+
+# External tool builders
+.externalToolBuilders/
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# PyDev specific (Python IDE for Eclipse)
+*.pydevproject
+
+# CDT-specific (C/C++ Development Tooling)
+.cproject
+
+# CDT- autotools
+.autotools
+
+# Java annotation processor (APT)
+.factorypath
+
+# PDT-specific (PHP Development Tools)
+.buildpath
+
+# sbteclipse plugin
+.target
+
+# Tern plugin
+.tern-project
+
+# TeXlipse plugin
+.texlipse
+
+# STS (Spring Tool Suite)
+.springBeans
+
+# Code Recommenders
+.recommenders/
+
+# Annotation Processing
+.apt_generated/
+.apt_generated_test/
+
+# Scala IDE specific (Scala & Java development for Eclipse)
+.cache-main
+.scala_dependencies
+.worksheet
+
+将删除 design-model/src/main/resources/
+将删除 design-model/src/test/
+将删除 mongodb/target/generated-sources/
+将删除 mongodb/target/generated-test-sources/
+将删除 ms/src/main/resources/
+将删除 ms/src/test/
+将删除 ms/target/generated-sources/
+将删除 my-kafka/src/test/
+将删除 my-kafka/target/generated-sources/
+将删除 mytest/configs/
+将删除 mytest/src/main/resources/
+将删除 mytest/src/test/
+将删除 mytest/target/generated-sources/
+将删除 out/production/aliuyn-iot/generated/
+将删除 out/production/my_mina/
+将删除 rabbitmq/src/test/
+将删除 redis-cluster/6368/data/
+将删除 redis-cluster/6369/data/
+将删除 redis-cluster/6378/data/
+将删除 redis-cluster/6379/data/
+将删除 redis-cluster/6388/data/
+将删除 redis-cluster/6389/data/
+将删除 redis-cluster/data/
+将删除 spring-01/src/test/
+将删除 spring-01/target/generated-sources/
+将删除 spring-02/target/generated-sources/
+将删除 spring-boot-druid/src/test/
+将删除 spring-boot-druid/target/generated-sources/
+将删除 spring-boot-interceptor/src/main/resources/static/
+将删除 spring-boot-interceptor/src/main/resources/templates/
+将删除 spring-boot-interceptor/target/generated-sources/
+将删除 spring-boot-interceptor/target/generated-test-sources/
+将删除 spring-boot-io/src/main/resources/
+将删除 spring-boot-io/target/generated-sources/
+将删除 spring-boot-io/target/generated-test-sources/
+将删除 spring-boot-rabbitmq/src/main/resources/static/
+将删除 spring-boot-rabbitmq/src/main/resources/templates/
+将删除 spring-boot-rabbitmq/src/test/java/main/
+将删除 spring-boot-redis-cluster-test/src/main/java/com/spjiang/springboot/service/
+将删除 spring-boot-redis-cluster-test/src/main/resources/static/
+将删除 spring-boot-redis-cluster-test/src/main/resources/templates/

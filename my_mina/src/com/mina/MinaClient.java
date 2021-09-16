@@ -31,6 +31,7 @@ public class MinaClient {
         connector.getFilterChain().addLast("codec", new ProtocolCodecFilter(
                 new TextLineCodecFactory(StandardCharsets.UTF_8, LineDelimiter.MAC.getValue(), LineDelimiter.MAC.getValue())
         ));
+        connector.getFilterChain().addFirst("filter",new MyClientFilter());
         connector.setHandler(new MyClientHandle());
         int port = 8001;
         String host = "127.0.0.1";
@@ -38,7 +39,7 @@ public class MinaClient {
         // 等待我们的连接
         connectFuture.awaitUninterruptibly();
         session = connectFuture.getSession();
-        session.write("发送信息：您好");
+        session.write("您好");
         // 等待关闭连接
         session.getCloseFuture().awaitUninterruptibly();
         connector.dispose();
