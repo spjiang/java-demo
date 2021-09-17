@@ -2,6 +2,8 @@ package com.protocol;
 
 import org.apache.mina.core.session.IdleStatus;
 import org.apache.mina.filter.codec.ProtocolCodecFilter;
+import org.apache.mina.filter.logging.LogLevel;
+import org.apache.mina.filter.logging.LoggingFilter;
 import org.apache.mina.transport.socket.nio.NioSocketAcceptor;
 
 import java.io.IOException;
@@ -22,6 +24,18 @@ public class ProtocolServer {
     public static void main(String[] args) throws IOException {
         accept = new NioSocketAcceptor();
         accept.setReuseAddress(true);
+        // 设置日志记录器
+        LoggingFilter logging = new LoggingFilter();
+        logging.setSessionCreatedLogLevel(LogLevel.NONE);
+        logging.setSessionOpenedLogLevel(LogLevel.NONE);
+        logging.setExceptionCaughtLogLevel(LogLevel.NONE);
+        logging.setMessageReceivedLogLevel(LogLevel.NONE);
+        logging.setMessageSentLogLevel(LogLevel.NONE);
+        logging.setSessionClosedLogLevel(LogLevel.NONE);
+        logging.setSessionIdleLogLevel(LogLevel.NONE);
+        // 设置过滤器
+        // 记录通信过程中的事件以及请求
+        accept.getFilterChain().addLast("logger", logging);
         // 过滤器主要实现协议的编码和解码
         accept.getFilterChain().addLast("codec", new ProtocolCodecFilter(
                 new ProtocolFactory(StandardCharsets.UTF_8)

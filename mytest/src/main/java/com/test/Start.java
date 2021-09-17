@@ -12,8 +12,10 @@ public class Start {
 /*        int test = 1;
         System.getProperty("line.separator", "\n");
         System.out.println("ccc");*/
-        int i = Runtime.getRuntime().availableProcessors();
-        System.out.println(i);
+//        int i = Runtime.getRuntime().availableProcessors();
+//        System.out.println(i);
+        byte[] _data = new byte[5];
+        System.out.println(_data);
 
     }
 }
