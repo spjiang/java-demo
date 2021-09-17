@@ -35,7 +35,6 @@ public class ProtocolDecoder extends ProtocolDecoderAdapter {
         this.charset = charset;
     }
 
-
     public Context getConText(IoSession session) {
         Context ctx = (Context) session.getAttribute(CONTEXT);
         if (ctx == null) {
