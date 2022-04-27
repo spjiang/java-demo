@@ -18,6 +18,7 @@
         <option value="$PROJECT_DIR$/mongodb/pom.xml" />
         <option value="$PROJECT_DIR$/my-kafka/pom.xml" />
         <option value="$PROJECT_DIR$/mytest/pom.xml" />
+        <option value="$PROJECT_DIR$/my_kafka_spring_boot/pom.xml" />
       </list>
     </option>
   </component>

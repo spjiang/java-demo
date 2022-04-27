@@ -10,6 +10,7 @@
       <module fileurl="file://$PROJECT_DIR$/ms/ms.iml" filepath="$PROJECT_DIR$/ms/ms.iml" />
       <module fileurl="file://$PROJECT_DIR$/my-kafka/my-kafka.iml" filepath="$PROJECT_DIR$/my-kafka/my-kafka.iml" />
       <module fileurl="file://$PROJECT_DIR$/my_file/my_file.iml" filepath="$PROJECT_DIR$/my_file/my_file.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my_kafka_spring_boot/my_kafka_spring_boot.iml" filepath="$PROJECT_DIR$/my_kafka_spring_boot/my_kafka_spring_boot.iml" />
       <module fileurl="file://$PROJECT_DIR$/my_mina/my_mina.iml" filepath="$PROJECT_DIR$/my_mina/my_mina.iml" />
       <module fileurl="file://$PROJECT_DIR$/my_mina2/my_mina2.iml" filepath="$PROJECT_DIR$/my_mina2/my_mina2.iml" />
       <module fileurl="file://$PROJECT_DIR$/mytest/mytest.iml" filepath="$PROJECT_DIR$/mytest/mytest.iml" />
