@@ -1,0 +1,43 @@
+[
+    {
+      "type": "label",
+      "name": "id",
+      "options": {
+        "required":true,
+        "valueType": "string",
+        "defaultValue": "",
+        "dependName":"",
+        "eventRequestUrl": "",
+        "selectOption": []
+      }
+    },
+    {
+      "type": "input",
+      "name": "product_line",
+      "options": {
+        "required":true,
+        "valueType": "string",
+        "defaultValue": "",
+        "dependName":"dataSource",
+        "eventRequestUrl": "/api/getDict",
+        "selectOption": []
+      }
+    },
+    {
+      "type": "select",
+      "name": "dataSource",
+      "options": {
+        "required":true,
+        "valueType": "float",
+        "defaultValue": "0.03141",
+        "dependName":"",
+        "eventRequestUrl": "",
+        "selectOption": [
+          {
+            "缺省值": "0.03141",
+            "检测值": "0.03143"
+          }
+        ]
+      }
+    }
+]

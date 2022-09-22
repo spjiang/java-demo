@@ -1,0 +1,25 @@
+CB001: # 边界
+ form:  # 表单
+  - config: {}
+    name: aa
+    type: index_key_type
+    label: 燃料种类
+    defaultValue: 1
+  - config: {}
+    name: bb
+    type: index_key_type
+    label: 燃料种类
+    defaultValue: 1
+CB002:
+ form:
+  - config: {}
+    name: aa
+    type: index_key_type
+    label: 燃料种类
+    defaultValue: 1
+  - config: {}
+    name: bb
+    type: index_key_type
+    label: 燃料种类
+    defaultValue: 1
+

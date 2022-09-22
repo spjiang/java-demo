@@ -4,21 +4,19 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/spring-boot-rabbitmq/pom.xml" />
-        <option value="$PROJECT_DIR$/spring-01/pom.xml" />
         <option value="$PROJECT_DIR$/spring-boot-01/pom.xml" />
         <option value="$PROJECT_DIR$/spring-boot-druid/pom.xml" />
         <option value="$PROJECT_DIR$/spring-boot-redis-cluster-test/pom.xml" />
         <option value="$PROJECT_DIR$/spring-boot-interceptor/pom.xml" />
-        <option value="$PROJECT_DIR$/spring-02/pom.xml" />
-        <option value="$PROJECT_DIR$/spring-boot-io/pom.xml" />
         <option value="$PROJECT_DIR$/java-map/pom.xml" />
         <option value="$PROJECT_DIR$/ms/pom.xml" />
         <option value="$PROJECT_DIR$/design-model/pom.xml" />
         <option value="$PROJECT_DIR$/rabbitmq/pom.xml" />
         <option value="$PROJECT_DIR$/mongodb/pom.xml" />
         <option value="$PROJECT_DIR$/my-kafka/pom.xml" />
-        <option value="$PROJECT_DIR$/mytest/pom.xml" />
         <option value="$PROJECT_DIR$/my_kafka_spring_boot/pom.xml" />
+        <option value="$PROJECT_DIR$/mavendemo/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-test/pom.xml" />
       </list>
     </option>
   </component>
