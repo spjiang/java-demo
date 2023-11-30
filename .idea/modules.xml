@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/TestDev/TestDev.iml" filepath="$PROJECT_DIR$/TestDev/TestDev.iml" />
       <module fileurl="file://$PROJECT_DIR$/aliuyn-iot/aliuyn-iot.iml" filepath="$PROJECT_DIR$/aliuyn-iot/aliuyn-iot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-test/dataset/dataset.iml" filepath="$PROJECT_DIR$/springboot-test/dataset/dataset.iml" />
       <module fileurl="file://$PROJECT_DIR$/design-model/design-model.iml" filepath="$PROJECT_DIR$/design-model/design-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/httpclient.iml" filepath="$PROJECT_DIR$/httpclient.iml" />
       <module fileurl="file://$PROJECT_DIR$/iot_01/iot_01.iml" filepath="$PROJECT_DIR$/iot_01/iot_01.iml" />
       <module fileurl="file://$PROJECT_DIR$/java-demo.iml" filepath="$PROJECT_DIR$/java-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kaoshi/kaoshi.iml" filepath="$PROJECT_DIR$/kaoshi/kaoshi.iml" />
       <module fileurl="file://$PROJECT_DIR$/mavendemo/mavendemo.iml" filepath="$PROJECT_DIR$/mavendemo/mavendemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/mongodb/mongodb.iml" filepath="$PROJECT_DIR$/mongodb/mongodb.iml" />
       <module fileurl="file://$PROJECT_DIR$/ms/ms.iml" filepath="$PROJECT_DIR$/ms/ms.iml" />

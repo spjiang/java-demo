@@ -14,16 +14,20 @@
         <module name="ms" />
         <module name="my-kafka" />
         <module name="design-model" />
-        <module name="springboot-test" />
         <module name="my_kafka_spring_boot" />
         <module name="rabbitmq" />
         <module name="spring-boot-interceptor" />
         <module name="spring-boot-rabbitmq" />
         <module name="mongodb" />
+        <module name="dataset" />
+        <module name="httpclient" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="dataset" target="1.8" />
+      <module name="demo" target="17" />
       <module name="design-model" target="1.5" />
+      <module name="httpclient" target="1.8" />
       <module name="java-test" target="1.5" />
       <module name="mavendemo" target="1.8" />
       <module name="mongodb" target="1.8" />
@@ -45,6 +49,9 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="dataset" options="-parameters" />
+      <module name="demo" options="-parameters" />
+      <module name="httpclient" options="-parameters" />
       <module name="mavendemo" options="-parameters" />
       <module name="mongodb" options="-parameters" />
       <module name="my-kafka" options="-parameters" />
@@ -55,7 +62,7 @@
       <module name="spring-boot-interceptor" options="-parameters" />
       <module name="spring-boot-rabbitmq" options="-parameters" />
       <module name="spring-boot-redis-cluster-test" options="-parameters" />
-      <module name="springboot-test" options="-parameters" />
+      <module name="springboot-test" options="" />
     </option>
   </component>
 </project>

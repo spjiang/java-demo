@@ -1,18 +1,15 @@
 package springboottest.demo;
 
-import lombok.Data;
-
 /**
  * Package: springboottest.demo
  *
  * @description:
  * @author: jiangshengping <spjiang@aliyun.com>
- * @create: 2022-05-30 22:41
+ * @create: 2023-04-21 10:33
  */
-@Data
-public class Person {
-    private String A;
-    private Integer B;
+public class Hkang {
+
+    public static void main(String[] args) {
+
+    }
 }
-
-

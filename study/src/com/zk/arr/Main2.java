@@ -16,20 +16,22 @@ public class Main2 {
     public static void main(String[] args) {
         int k, temp;
         // 升序
-        int[] num = {7, 4, 9, 6, 2, 0, 1,10};
-        for (int i = 1; i < num.length-1; i++) {
-            k=i-1;
+        int[] num = {7, 4, 9, 6, 2, 0, 1, 10, 5};
+        for (int i = 0; i < num.length - 1; i++) {
+            k = i;
             for (int j = k; j < num.length; j++) {
+                // k是当前对比数据中最小值，j不断循环与之前循环中获取的最小k不断比较，获取最新最小的k对应的值
                 if (num[j] < num[k]) {
                     k = j;
                 }
             }
-            // 将最小的数据和第i个数交换
-            temp = num[i-1];
-            num[i-1] = num[k];
+            // 当前循环中初始值下标
+            temp = num[i];
+            // k是当前循环最小值
+            num[i] = num[k];
             num[k] = temp;
+            System.out.println(Arrays.toString(num));
         }
-        System.out.println(Arrays.toString(num));
     }
 
 //    public static void main(String[] args) {

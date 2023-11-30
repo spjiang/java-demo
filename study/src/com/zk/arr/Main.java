@@ -32,7 +32,6 @@ public class Main {
 
         // +++++ i=3,j<1 ++++++
         // {1,2,7,10,12} j=0
-
         int[] test = {10, 2, 12, 7, 1};
         for (int i = 0; i < test.length - 1; i++) {
             for (int j = 0; j < test.length - 1 - i; j++) {
@@ -45,5 +44,4 @@ public class Main {
         }
         System.out.println(Arrays.toString(test));
     }
-
 }
